@@ -16,6 +16,9 @@ class HomeScreen extends StatelessWidget {
             backgroundColor: Color(0xFFFF3A44),
             floating: true,
             pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text('T A S K Y'),
+            ),
           ),
           SliverToBoxAdapter(
             child: Container(
