@@ -12,11 +12,17 @@ class HomeScreen extends StatelessWidget {
             leading: CircleAvatar(
               radius: 10,
             ),
-            toolbarHeight: 300,
+            expandedHeight: 300,
             backgroundColor: Color(0xFFFF3A44),
-            floating: false,
-            pinned: false,
+            floating: true,
+            pinned: true,
           ),
+          SliverToBoxAdapter(
+            child: Container(
+              height: 400,
+              color: Colors.blueAccent,
+            ),
+          )
         ],
       ),
     );
