@@ -9,15 +9,21 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            leading: CircleAvatar(
-              radius: 10,
+            leading: Padding(
+              padding: EdgeInsets.all(8),
+              child: CircleAvatar(
+                radius: 40,
+              ),
             ),
             expandedHeight: 300,
             backgroundColor: Color(0xFFFF3A44),
             floating: true,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text('T A S K Y'),
+              title: Padding(
+                padding: EdgeInsets.only(left: 45),
+                child: Text('T A S K Y'),
+              ),
             ),
           ),
           SliverToBoxAdapter(
@@ -25,7 +31,13 @@ class HomeScreen extends StatelessWidget {
               height: 400,
               color: Colors.blueAccent,
             ),
-          )
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              height: 400,
+              color: Colors.blueAccent,
+            ),
+          ),
         ],
       ),
     );
