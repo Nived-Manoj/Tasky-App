@@ -9,19 +9,31 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            leading: Padding(
-              padding: EdgeInsets.all(8),
-              child: CircleAvatar(
-                radius: 40,
-              ),
-            ),
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    radius: 30,
+                  ),
+                  SizedBox(
+                    width: 300,
+                  ),
+                  IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))
+                ],
+              )
+            ],
+            stretch: true,
+            toolbarHeight: 100,
             expandedHeight: 300,
             backgroundColor: Color(0xFFFF3A44),
             floating: true,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
+              stretchModes: [StretchMode.zoomBackground],
               title: Padding(
-                padding: EdgeInsets.only(left: 45),
+                padding: EdgeInsets.only(left: 50),
                 child: Text('T A S K Y'),
               ),
             ),
@@ -30,6 +42,22 @@ class HomeScreen extends StatelessWidget {
             child: Container(
               height: 400,
               color: Colors.blueAccent,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 20,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              height: 400,
+              color: Colors.blueAccent,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 20,
             ),
           ),
           SliverToBoxAdapter(
