@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mainproject_tasky/utils/color_constant.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,7 +7,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: Image.asset(
+          'assets/icons/Group(1).png',
+          color: ColorConstant.Black,
+        ),
+      ),
     );
   }
 }
