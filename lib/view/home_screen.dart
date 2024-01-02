@@ -8,11 +8,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset(
-          'assets/icons/Group(1).png',
-          color: ColorConstant.Black,
-        ),
-      ),
+          //leading:
+
+          ),
     );
   }
 }
