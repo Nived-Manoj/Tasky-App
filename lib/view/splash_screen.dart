@@ -1,51 +1,45 @@
-// import 'dart:async';
+import 'dart:async';
 
-// import 'package:flutter/material.dart';
-// import 'package:mainproject_tasky/utils/color_constant.dart';
+import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
-// class SplashScreen extends StatefulWidget {
-//   const SplashScreen({super.key});
+import 'package:mainproject_tasky/view/home_screen.dart';
 
-//   @override
-//   State<SplashScreen> createState() => _SplashScreenState();
-// }
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
-// class _SplashScreenState extends State<SplashScreen> {
-//   @override
-//   void initState() {
-//     super.initState();
-//     Timer(Duration(seconds: 8), () {
-//       Navigator.pushReplacement(
-//         context,
-//         MaterialPageRoute(
-//           builder: (context) => UserScreen(),
-//         ),
-//       );
-//     });
-//   }
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: ColorConstant.Black,
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             Container(
-//               height: 150,
-//               width: 150,
-//               child: Image.asset("assets/images/splash.png"),
-//             ),
-//             Padding(
-//               padding: const EdgeInsets.only(top: 70),
-//               child: CircularProgressIndicator(
-//                 color: Colors.deepPurpleAccent,
-//               ),
-//             )
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 8), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(),
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              child: Image.asset("assets/images/splash.jpg"),
+            ),
+            Lottie.asset("assets/animations/animation1.json", height: 180)
+          ],
+        ),
+      ),
+    );
+  }
+}
