@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:mainproject_tasky/view/create_task.dart';
 import 'package:mainproject_tasky/view/home_screen.dart';
@@ -26,9 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
       body: WidgetList[SelectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: SelectedIndex,
-        backgroundColor: Colors.black,
-        selectedItemColor: ColorConstant.primaryBlue,
-        unselectedIconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Color(0XFFD8DEF3),
+        selectedItemColor: Color(0XFFAF2CF3),
+        unselectedIconTheme: IconThemeData(color: Colors.grey),
         type: BottomNavigationBarType.fixed,
         onTap: (index) {
           SelectedIndex = index;
@@ -37,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         items: [
           BottomNavigationBarItem(
               icon: ImageIcon(
-                AssetImage('assets/icons/Group (1).png'),
+                AssetImage('assets/icons/home.png'),
                 size: 30,
               ),
               label: "   Home"),
@@ -49,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
               label: "Create"),
           BottomNavigationBarItem(
               icon: ImageIcon(
-                AssetImage('assets/icons/Group (1).png'),
+                AssetImage('assets/icons/search.png'),
                 size: 30,
               ),
               label: "Search"),

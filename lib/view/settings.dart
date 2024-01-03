@@ -5,6 +5,13 @@ class Settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        leading: BackButton(
+          style: ButtonStyle(iconSize: MaterialStatePropertyAll(30)),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+      ),
+    );
   }
 }
