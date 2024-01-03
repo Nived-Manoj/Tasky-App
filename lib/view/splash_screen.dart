@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import 'package:mainproject_tasky/view/home_screen.dart';
+import 'package:mainproject_tasky/view/bottom_nav.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               child: Image.asset("assets/images/splash.jpg"),
             ),
-            Lottie.asset("assets/animations/animation1.json", height: 180)
+            Lottie.asset("assets/animations/animation1.json", height: 160)
           ],
         ),
       ),
