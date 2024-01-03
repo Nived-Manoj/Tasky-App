@@ -10,9 +10,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConstant.mainbg,
+      backgroundColor: ColorConstant.white,
       appBar: AppBar(
-        backgroundColor: ColorConstant.mainbg,
+        backgroundColor: ColorConstant.white,
         leading: InkWell(
           child: Image.asset(
             color: ColorConstant.Black,
@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(right: 5, bottom: 5),
               child: CircleAvatar(
-                backgroundColor: ColorConstant.Black,
+                backgroundColor: ColorConstant.mainbg,
                 radius: 25,
               ),
             ),
@@ -245,7 +245,7 @@ class Home extends StatelessWidget {
                 ),
                 CircularPercentIndicator(
                   radius: 40.0,
-                  lineWidth: 13.0,
+                  lineWidth: 10.0,
                   animation: true,
                   percent: 0.4,
                   center: Text(
@@ -298,7 +298,7 @@ class Home extends StatelessWidget {
                 ),
                 CircularPercentIndicator(
                   radius: 40.0,
-                  lineWidth: 13.0,
+                  lineWidth: 10.0,
                   animation: true,
                   percent: 0.7,
                   center: Text(
