@@ -5,6 +5,13 @@ class Onboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Column(
+        children: [
+          Image.asset("assets/images/student1.png"),
+          Text("Manage your daily activity")
+        ],
+      ),
+    );
   }
 }
