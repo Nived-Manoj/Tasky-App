@@ -9,7 +9,8 @@ class Onboarding extends StatelessWidget {
       body: Column(
         children: [
           Image.asset("assets/images/student1.png"),
-          Text("Manage your daily activity")
+          Text("Manage your daily activity  team with tasky"),
+          ElevatedButton(onPressed: () {}, child: Text("Get Started")),
         ],
       ),
     );
