@@ -8,6 +8,7 @@ class Onboarding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset("assets/images/student1.png"),
           Text("Manage your daily activity  team with tasky"),
