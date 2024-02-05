@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
               label: "   Home"),
           BottomNavigationBarItem(
               icon: ImageIcon(
-                AssetImage("assets/icons/Group (1).png"),
+                AssetImage("assets/icons/plus.png"),
                 size: 30,
               ),
               label: "Create"),
