@@ -11,7 +11,8 @@ class Onboarding extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset("assets/images/student1.png"),
-          Text("Manage your daily activity  team with tasky"),
+          Text("Manage your daily activity  team with tasky",
+              style: TextStyle(fontSize: 39)),
           ElevatedButton(
               onPressed: () {
                 Navigator.push(
