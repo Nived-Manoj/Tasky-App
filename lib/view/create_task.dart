@@ -5,6 +5,14 @@ class CreateTask extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Add Project",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+      ),
+      body: Column(
+        children: [],
+      ),
+    );
   }
 }
