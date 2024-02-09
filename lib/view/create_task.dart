@@ -22,6 +22,22 @@ class CreateTask extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(9.0),
+            child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    hintText: "Project Name")),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(9.0),
+            child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    hintText: "Description")),
           )
         ],
       ),
