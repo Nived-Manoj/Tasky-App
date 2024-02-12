@@ -12,7 +12,7 @@ class Onboarding extends StatelessWidget {
         children: [
           Image.asset("assets/images/student1.png"),
           Text("Manage your daily activity  team with tasky",
-              style: TextStyle(fontSize: 39)),
+              style: TextStyle(fontSize: 33)),
           ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -21,7 +21,9 @@ class Onboarding extends StatelessWidget {
                       builder: (context) => LoginScreen(),
                     ));
               },
-              child: Text("Get Started")),
+              child: Text(
+                "Get Started",
+              )),
         ],
       ),
     );
