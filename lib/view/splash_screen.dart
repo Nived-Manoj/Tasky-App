@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 8), () {
+    Timer(Duration(seconds: 6), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               child: Image.asset("assets/images/splash.jpg"),
             ),
-            Lottie.asset("assets/animations/animation1.json", height: 160)
+            Lottie.asset("assets/animations/animation1.json", height: 140)
           ],
         ),
       ),

@@ -22,8 +22,11 @@ class Onboarding extends StatelessWidget {
           ),
           Center(
             child: Text(
-              "Manage your daily activity \n team with tasky",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              "We have created an covinient interface \n for teamwork",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: ColorConstant.grey),
               textAlign: TextAlign.center,
             ),
           ),
