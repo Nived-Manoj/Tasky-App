@@ -38,6 +38,22 @@ class CreateTask extends StatelessWidget {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12)),
                     hintText: "Description")),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(9.0),
+            child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    hintText: "Start Date")),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(9.0),
+            child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    hintText: "End Date")),
           )
         ],
       ),
