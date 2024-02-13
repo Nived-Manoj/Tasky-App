@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mainproject_tasky/utils/color_constant.dart';
 import 'package:mainproject_tasky/view/login_screen.dart';
 
 class RegScreen extends StatelessWidget {
@@ -36,6 +37,9 @@ class RegScreen extends StatelessWidget {
           ),
           SizedBox(height: 10),
           ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.orange),
+                  fixedSize: MaterialStatePropertyAll(Size(180, 50))),
               onPressed: () {
                 Navigator.push(
                     context,
@@ -43,8 +47,11 @@ class RegScreen extends StatelessWidget {
                       builder: (context) => LoginScreen(),
                     ));
               },
-              style: ElevatedButton.styleFrom(fixedSize: Size(180, 50)),
-              child: Text("Sign up")),
+              child: Text("Sign up",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: ColorConstant.white,
+                      fontWeight: FontWeight.bold))),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -57,7 +64,9 @@ class RegScreen extends StatelessWidget {
                           builder: (context) => LoginScreen(),
                         ));
                   },
-                  child: Text("Log In")),
+                  child: Text(
+                    "Log In",
+                  )),
             ],
           )
         ],

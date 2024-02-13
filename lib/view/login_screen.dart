@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mainproject_tasky/utils/color_constant.dart';
 import 'package:mainproject_tasky/view/bottom_nav.dart';
 import 'package:mainproject_tasky/view/register_screen.dart';
 
@@ -37,6 +38,9 @@ class LoginScreen extends StatelessWidget {
           ),
           SizedBox(height: 10),
           ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.orange),
+                  fixedSize: MaterialStatePropertyAll(Size(180, 50))),
               onPressed: () {
                 Navigator.push(
                     context,
@@ -44,8 +48,11 @@ class LoginScreen extends StatelessWidget {
                       builder: (context) => HomeScreen(),
                     ));
               },
-              style: ElevatedButton.styleFrom(fixedSize: Size(180, 50)),
-              child: Text("Login")),
+              child: Text("Login",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: ColorConstant.white,
+                      fontWeight: FontWeight.bold))),
           TextButton(onPressed: () {}, child: Text("Forgot Password ?")),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

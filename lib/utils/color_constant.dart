@@ -5,6 +5,7 @@ class ColorConstant {
   static Color primaryBlue = Colors.blueAccent;
   static Color Black = Colors.black;
   static Color mainbg = Color(0XFFD8DEF3);
+  static Color orange = Color(0XFFfb8500);
   static Color white = Colors.white;
   static Color grey = Colors.grey;
 }
