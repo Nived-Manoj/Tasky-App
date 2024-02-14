@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mainproject_tasky/utils/color_constant.dart';
 
 class CreateTask extends StatelessWidget {
   const CreateTask({super.key});
@@ -33,14 +34,12 @@ class CreateTask extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
-              child: TextField(
-                  maxLines: null,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12)),
-                      hintText: "Description")),
-            ),
+            child: TextField(
+                maxLines: null,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    hintText: "Description")),
           ),
           Padding(
             padding: const EdgeInsets.all(9.0),
@@ -57,7 +56,23 @@ class CreateTask extends StatelessWidget {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12)),
                     hintText: "End Date")),
-          )
+          ),
+          ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.orange),
+                  fixedSize: MaterialStatePropertyAll(Size(380, 50))),
+              onPressed: () {
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => HomeScreen(),
+                //     ));
+              },
+              child: Text("Save",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: ColorConstant.white,
+                      fontWeight: FontWeight.bold))),
         ],
       ),
     );

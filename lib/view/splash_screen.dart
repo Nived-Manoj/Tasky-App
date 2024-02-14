@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import 'package:mainproject_tasky/view/bottom_nav.dart';
 import 'package:mainproject_tasky/view/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
