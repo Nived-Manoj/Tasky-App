@@ -38,7 +38,8 @@ class _CreateTaskState extends State<CreateTask> {
                   children: [
                     Image.asset(
                       color: ColorConstant.Black,
-                      'assets/icons/coolicon.png',
+                      'assets/icons/shapes.png',
+                      scale: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
