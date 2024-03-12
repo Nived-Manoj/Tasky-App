@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mainproject_tasky/utils/color_constant.dart';
 
@@ -39,7 +38,7 @@ class _CreateTaskState extends State<CreateTask> {
                     Image.asset(
                       color: ColorConstant.Black,
                       'assets/icons/shapes.png',
-                      scale: 10,
+                      scale: 12,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -66,8 +65,9 @@ class _CreateTaskState extends State<CreateTask> {
                   ],
                 ),
                 decoration: BoxDecoration(
+                  border: Border.all(style: BorderStyle.solid),
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey,
+                  color: Colors.white,
                 ),
               ),
             ),

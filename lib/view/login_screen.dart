@@ -4,8 +4,9 @@ import 'package:mainproject_tasky/view/bottom_nav.dart';
 import 'package:mainproject_tasky/view/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
-
+  LoginScreen({super.key});
+  final _emailcontroller = TextEditingController();
+  final _passcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,9 +21,10 @@ class LoginScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: TextField(
+              controller: _emailcontroller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "username",
+                hintText: "Email",
               ),
             ),
           ),
@@ -30,9 +32,10 @@ class LoginScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: TextField(
+              controller: _passcontroller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "password",
+                hintText: "Password",
               ),
             ),
           ),

@@ -21,7 +21,7 @@ class RegScreen extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "username",
+                hintText: "Email",
               ),
             ),
           ),
@@ -31,7 +31,7 @@ class RegScreen extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "password",
+                hintText: "Password",
               ),
             ),
           ),
