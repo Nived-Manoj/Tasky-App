@@ -20,11 +20,47 @@ class Profile extends StatelessWidget {
               radius: 80,
             ),
           ),
-          Text("User Name",
+          Text("Shane Whatson",
               style: TextStyle(
                   color: ColorConstant.Black,
                   fontSize: 30,
                   fontWeight: FontWeight.w500)),
+          SizedBox(
+            height: 8,
+          ),
+          Text("Personal info"),
+          SizedBox(
+            height: 8,
+          ),
+          Container(
+            height: 65,
+            width: 400,
+            color: Colors.amber,
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Container(
+            height: 65,
+            width: 400,
+            color: Colors.amber,
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Container(
+            height: 65,
+            width: 400,
+            color: Colors.amber,
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Container(
+            height: 65,
+            width: 400,
+            color: Colors.amber,
+          ),
         ],
       ),
     );
