@@ -28,7 +28,15 @@ class Profile extends StatelessWidget {
           SizedBox(
             height: 8,
           ),
-          Text("Personal info"),
+          Padding(
+              padding: const EdgeInsets.only(right: 290),
+              child: Text(
+                "Personal info",
+                style: TextStyle(
+                    color: ColorConstant.Black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              )),
           SizedBox(
             height: 8,
           ),
@@ -36,6 +44,7 @@ class Profile extends StatelessWidget {
             height: 65,
             width: 400,
             color: Colors.amber,
+            // child: Column(Text()),
           ),
           SizedBox(
             height: 8,

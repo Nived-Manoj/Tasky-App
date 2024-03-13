@@ -8,10 +8,6 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(
-          style: ButtonStyle(iconSize: MaterialStatePropertyAll(30)),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         title: Container(
           height: 45,
           decoration: BoxDecoration(
