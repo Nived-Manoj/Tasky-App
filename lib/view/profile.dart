@@ -20,7 +20,7 @@ class Profile extends StatelessWidget {
               radius: 80,
             ),
           ),
-          Text("Shane Whatson",
+          Text("Shane Watson",
               style: TextStyle(
                   color: ColorConstant.Black,
                   fontSize: 30,
