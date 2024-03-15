@@ -13,13 +13,14 @@ class Settings extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
         title: Text("Settings", style: TextStyle(fontWeight: FontWeight.w600)),
+        centerTitle: true,
       ),
       body: Center(
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.blueGrey,
-          ),
+              borderRadius: BorderRadius.circular(10),
+              color: ColorConstant.white,
+              border: Border.all()),
           width: 400,
           child: Column(
             children: [
@@ -27,48 +28,24 @@ class Settings extends StatelessWidget {
                 height: 8,
               ),
               Container(
-                height: 75,
+                height: 80,
                 width: 380,
-                color: Colors.amber,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Email"),
-                        Text(
-                          "shanewatson@gmail.com",
-                          style: TextStyle(
-                              color: ColorConstant.Black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500),
-                        )
-                      ]),
-                ),
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Container(
-                height: 75,
-                width: 380,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Phone"),
-                        Text(
-                          "+14 223 224 553",
-                          style: TextStyle(
-                              color: ColorConstant.Black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500),
-                        )
-                      ]),
-                ),
+                color: ColorConstant.orange,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(
+                        radius: 35,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text("Shane Whatson"),
+                          Text("Flutter Developer"),
+                        ],
+                      ),
+                      Text("arrow"),
+                    ]),
               ),
               SizedBox(
                 height: 8,
@@ -79,18 +56,18 @@ class Settings extends StatelessWidget {
                 color: Colors.amber,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Birthday"),
+                        Text("Logo"),
                         Text(
-                          "11/11/1999",
+                          "Account Settings",
                           style: TextStyle(
                               color: ColorConstant.Black,
-                              fontSize: 16,
+                              fontSize: 26,
                               fontWeight: FontWeight.w500),
                         ),
+                        Text("arrow"),
                       ]),
                 ),
               ),
@@ -103,18 +80,18 @@ class Settings extends StatelessWidget {
                 color: Colors.amber,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Name"),
+                        Text("Logo"),
                         Text(
-                          "Shane whatson",
+                          "Privacy",
                           style: TextStyle(
                               color: ColorConstant.Black,
-                              fontSize: 16,
+                              fontSize: 26,
                               fontWeight: FontWeight.w500),
-                        )
+                        ),
+                        Text("arrow"),
                       ]),
                 ),
               ),
@@ -127,18 +104,66 @@ class Settings extends StatelessWidget {
                 color: Colors.amber,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Name"),
+                        Text("Logo"),
                         Text(
-                          "Shane whatson",
+                          "Reset Password",
                           style: TextStyle(
                               color: ColorConstant.Black,
-                              fontSize: 16,
+                              fontSize: 26,
                               fontWeight: FontWeight.w500),
-                        )
+                        ),
+                        Text("arrow"),
+                      ]),
+                ),
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Container(
+                height: 75,
+                width: 380,
+                color: Colors.amber,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Logo"),
+                        Text(
+                          "Language",
+                          style: TextStyle(
+                              color: ColorConstant.Black,
+                              fontSize: 26,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Text("arrow"),
+                      ]),
+                ),
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Container(
+                height: 75,
+                width: 380,
+                color: Colors.amber,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Logo"),
+                        Text(
+                          "Help",
+                          style: TextStyle(
+                              color: ColorConstant.Black,
+                              fontSize: 26,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Text("arrow"),
                       ]),
                 ),
               ),
