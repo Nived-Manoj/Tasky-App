@@ -176,6 +176,7 @@ class Profile extends StatelessWidget {
                 SizedBox(
                   height: 8,
                 ),
+                
               ],
             ),
           ),
