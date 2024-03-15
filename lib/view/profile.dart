@@ -8,11 +8,10 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // leading: BackButton(
-        //   style: ButtonStyle(iconSize: MaterialStatePropertyAll(30)),
-        //   onPressed: () => Navigator.of(context).pop(),
-        // ),
-        title: Text("My profile"),
+        centerTitle: true,
+        title: Text("My profile",
+            style: TextStyle(
+                color: ColorConstant.Black, fontWeight: FontWeight.w600)),
       ),
       body: Column(
         children: [
@@ -25,12 +24,12 @@ class Profile extends StatelessWidget {
               style: TextStyle(
                   color: ColorConstant.Black,
                   fontSize: 30,
-                  fontWeight: FontWeight.w500)),
-          Text("shanewatson@gmail.com",
+                  fontWeight: FontWeight.w700)),
+          Text("Flutter Developer",
               style: TextStyle(
-                color: ColorConstant.Black,
-                fontSize: 20,
-              )),
+                  color: ColorConstant.Black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500)),
           SizedBox(
             height: 8,
           ),
@@ -44,18 +43,21 @@ class Profile extends StatelessWidget {
                     fontWeight: FontWeight.w500),
               )),
           SizedBox(
-            height: 8,
+            height: 10,
           ),
           Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(10),
               color: Colors.blueGrey,
             ),
             width: 400,
             child: Column(
               children: [
+                SizedBox(
+                  height: 8,
+                ),
                 Container(
-                  height: 65,
+                  height: 75,
                   width: 380,
                   color: Colors.amber,
                   child: Padding(
@@ -64,9 +66,9 @@ class Profile extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Name"),
+                          Text("Email"),
                           Text(
-                            "Shane whatson",
+                            "shanewatson@gmail.com",
                             style: TextStyle(
                                 color: ColorConstant.Black,
                                 fontSize: 16,
@@ -79,31 +81,7 @@ class Profile extends StatelessWidget {
                   height: 8,
                 ),
                 Container(
-                  height: 65,
-                  width: 380,
-                  color: Colors.amber,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Name"),
-                          Text(
-                            "Shane whatson",
-                            style: TextStyle(
-                                color: ColorConstant.Black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
-                          )
-                        ]),
-                  ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Container(
-                  height: 65,
+                  height: 75,
                   width: 380,
                   color: Colors.amber,
                   child: Padding(
@@ -127,7 +105,7 @@ class Profile extends StatelessWidget {
                   height: 8,
                 ),
                 Container(
-                  height: 65,
+                  height: 75,
                   width: 380,
                   color: Colors.amber,
                   child: Padding(
@@ -143,9 +121,60 @@ class Profile extends StatelessWidget {
                                 color: ColorConstant.Black,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500),
+                          ),
+                        ]),
+                  ),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Container(
+                  height: 75,
+                  width: 380,
+                  color: Colors.amber,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Name"),
+                          Text(
+                            "Shane whatson",
+                            style: TextStyle(
+                                color: ColorConstant.Black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
                           )
                         ]),
                   ),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Container(
+                  height: 75,
+                  width: 380,
+                  color: Colors.amber,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Name"),
+                          Text(
+                            "Shane whatson",
+                            style: TextStyle(
+                                color: ColorConstant.Black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ]),
+                  ),
+                ),
+                SizedBox(
+                  height: 8,
                 ),
               ],
             ),
