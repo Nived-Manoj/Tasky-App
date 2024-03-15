@@ -12,6 +12,7 @@ class Settings extends StatelessWidget {
           style: ButtonStyle(iconSize: MaterialStatePropertyAll(30)),
           onPressed: () => Navigator.of(context).pop(),
         ),
+        title: Text("Settings", style: TextStyle(fontWeight: FontWeight.w600)),
       ),
       body: Center(
         child: Container(
@@ -52,7 +53,6 @@ class Settings extends StatelessWidget {
               Container(
                 height: 75,
                 width: 380,
-                color: Colors.amber,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Column(
