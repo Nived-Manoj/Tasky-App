@@ -160,7 +160,7 @@ class Settings extends StatelessWidget {
                           "Help",
                           style: TextStyle(
                               color: ColorConstant.Black,
-                              fontSize: 26,
+                              fontSize: 16,
                               fontWeight: FontWeight.w500),
                         ),
                         Text("arrow"),
