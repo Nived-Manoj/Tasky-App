@@ -4,21 +4,24 @@ import 'package:mainproject_tasky/view/profile.dart';
 import 'package:mainproject_tasky/view/settings.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstant.white,
       appBar: AppBar(
         backgroundColor: ColorConstant.white,
-        leading: InkWell(
-          child: Image.asset(
-            color: ColorConstant.Black,
-            'assets/icons/Group (1).png',
-          ),
-          onTap: () {
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.menu, color: ColorConstant.Black),
+          onPressed: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -27,14 +30,7 @@ class Home extends StatelessWidget {
           },
         ),
         actions: [
-          InkWell(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 5, bottom: 5),
-              child: CircleAvatar(
-                backgroundColor: ColorConstant.mainbg,
-                radius: 25,
-              ),
-            ),
+          GestureDetector(
             onTap: () {
               Navigator.push(
                   context,
@@ -42,275 +38,166 @@ class Home extends StatelessWidget {
                     builder: (context) => Profile(),
                   ));
             },
-          )
+            child: const Padding(
+              padding: EdgeInsets.only(right: 16),
+              child: CircleAvatar(
+                radius: 20,
+                child: Icon(Icons.person, color: Colors.black),
+              ),
+            ),
+          ),
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 220),
-            child: Text("Hello, User!",
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Hello, User!",
                 style: TextStyle(
                   color: ColorConstant.Black,
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
-                )),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 240),
-            child: Text("Have a nice day ,",
+                ),
+              ),
+              Text(
+                "Have a nice day,",
                 style: TextStyle(
                   color: ColorConstant.Black,
                   fontSize: 18,
-                )),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                  child: Container(
-                    width: 120,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: ColorConstant.grey),
-                    ),
-                    child: Center(
-                      child: Text("My Tasks",
-                          style: TextStyle(
-                            color: ColorConstant.Black,
-                            fontSize: 18,
-                          )),
-                    ),
-                  ),
-                  onTap: () {},
-                ),
-                InkWell(
-                  child: Container(
-                    width: 120,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: ColorConstant.grey),
-                    ),
-                    child: Center(
-                      child: Text("Ongoing",
-                          style: TextStyle(
-                            color: ColorConstant.Black,
-                            fontSize: 18,
-                          )),
-                    ),
-                  ),
-                  onTap: () {},
-                ),
-                InkWell(
-                  child: Container(
-                    width: 120,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: ColorConstant.grey),
-                    ),
-                    child: Center(
-                      child: Text("Completed",
-                          style: TextStyle(
-                            color: ColorConstant.Black,
-                            fontSize: 18,
-                          )),
-                    ),
-                  ),
-                  onTap: () {},
-                ),
-              ],
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                height: 200,
-                width: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: ColorConstant.primaryRed,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text("Project 1",
-                        style: TextStyle(
-                          color: ColorConstant.Black,
-                          fontSize: 30,
-                        )),
-                    Text("App developement",
-                        style: TextStyle(
-                          color: ColorConstant.Black,
-                          fontSize: 20,
-                        )),
-                    Text("21 January 2024",
-                        style: TextStyle(
-                          color: ColorConstant.Black,
-                          fontSize: 15,
-                        )),
-                  ],
                 ),
               ),
-              Container(
-                height: 200,
-                width: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: ColorConstant.primaryBlue,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text("Project 2",
-                        style: TextStyle(
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _buildCategoryButton("My Tasks"),
+                  _buildCategoryButton("Ongoing"),
+                  _buildCategoryButton("Completed"),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _buildProjectCard("Project 1", "App development",
+                      "21 January 2024", ColorConstant.primaryRed),
+                  _buildProjectCard("Project 2", "App design",
+                      "21 February 2024", ColorConstant.primaryBlue),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Progress",
+                      style: TextStyle(
                           color: ColorConstant.Black,
-                          fontSize: 30,
-                        )),
-                    Text("App design",
-                        style: TextStyle(
-                          color: ColorConstant.Black,
-                          fontSize: 20,
-                        )),
-                    Text("21 february 2024",
-                        style: TextStyle(
-                          color: ColorConstant.Black,
-                          fontSize: 15,
-                        )),
-                  ],
-                ),
-              )
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600)),
+                  Text("See All",
+                      style:
+                          TextStyle(color: ColorConstant.Black, fontSize: 16)),
+                ],
+              ),
+              const SizedBox(height: 16),
+              _buildProgressCard("App development", "Team Project",
+                  "5 Participants", 0.4, ColorConstant.primaryRed),
+              const SizedBox(height: 16),
+              _buildProgressCard("App design", "Team Project", "5 Participants",
+                  0.7, ColorConstant.primaryBlue),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCategoryButton(String title) {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        primary: ColorConstant.white,
+        onPrimary: ColorConstant.Black,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: BorderSide(color: ColorConstant.grey),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      ),
+      child: Text(title, style: TextStyle(fontSize: 16)),
+    );
+  }
+
+  Widget _buildProjectCard(
+      String title, String subtitle, String date, Color color) {
+    return Container(
+      height: 180,
+      width: 170,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: color,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(title,
+                style: TextStyle(
+                    color: ColorConstant.Black,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold)),
+            Text(subtitle,
+                style: TextStyle(color: ColorConstant.Black, fontSize: 18)),
+            Text(date,
+                style: TextStyle(color: ColorConstant.Black, fontSize: 14)),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildProgressCard(String title, String subtitle, String participants,
+      double progress, Color color) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: ColorConstant.mainbg,
+        border: Border.all(color: ColorConstant.grey),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text("Progress",
-                    style: TextStyle(
-                      color: ColorConstant.Black,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text("See All",
-                    style: TextStyle(
+              Text(title,
+                  style: TextStyle(
                       color: ColorConstant.Black,
                       fontSize: 20,
-                    )),
-              ),
+                      fontWeight: FontWeight.w500)),
+              const SizedBox(height: 4),
+              Text(subtitle,
+                  style: TextStyle(color: ColorConstant.Black, fontSize: 16)),
+              const SizedBox(height: 4),
+              Text(participants,
+                  style: TextStyle(color: ColorConstant.Black, fontSize: 14)),
             ],
           ),
-          Container(
-            height: 100,
-            width: 390,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: ColorConstant.mainbg,
-              border: Border.all(
-                color: ColorConstant.grey,
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("App developement",
-                        style: TextStyle(
-                            color: ColorConstant.Black,
-                            fontSize: 27,
-                            fontWeight: FontWeight.w500)),
-                    Text("Team Project",
-                        style: TextStyle(
-                          color: ColorConstant.Black,
-                          fontSize: 20,
-                        )),
-                    Text("5 Participants",
-                        style: TextStyle(
-                          color: ColorConstant.Black,
-                          fontSize: 18,
-                        )),
-                  ],
-                ),
-                CircularPercentIndicator(
-                  radius: 40.0,
-                  lineWidth: 10.0,
-                  animation: true,
-                  percent: 0.4,
-                  center: Text(
-                    "40%",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                  ),
-                  circularStrokeCap: CircularStrokeCap.round,
-                  progressColor: ColorConstant.primaryRed,
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            height: 100,
-            width: 390,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: ColorConstant.mainbg,
-              border: Border.all(
-                color: ColorConstant.grey,
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("App developement",
-                        style: TextStyle(
-                            color: ColorConstant.Black,
-                            fontSize: 27,
-                            fontWeight: FontWeight.w500)),
-                    Text("Team Project",
-                        style: TextStyle(
-                          color: ColorConstant.Black,
-                          fontSize: 20,
-                        )),
-                    Text("5 Participants",
-                        style: TextStyle(
-                          color: ColorConstant.Black,
-                          fontSize: 18,
-                        )),
-                  ],
-                ),
-                CircularPercentIndicator(
-                  radius: 40.0,
-                  lineWidth: 10.0,
-                  animation: true,
-                  percent: 0.7,
-                  center: Text(
-                    "70%",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                  ),
-                  circularStrokeCap: CircularStrokeCap.round,
-                  progressColor: ColorConstant.primaryBlue,
-                ),
-              ],
-            ),
+          CircularPercentIndicator(
+            radius: 40.0,
+            lineWidth: 10.0,
+            animation: true,
+            percent: progress,
+            center: Text("${(progress * 100).toInt()}%",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)),
+            circularStrokeCap: CircularStrokeCap.round,
+            progressColor: color,
           ),
         ],
       ),
