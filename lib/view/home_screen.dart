@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
         backgroundColor: ColorConstant.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.menu, color: ColorConstant.Black),
+          icon: Icon(Icons.menu, color: ColorConstant.white),
           onPressed: () {
             Navigator.push(
                 context,
