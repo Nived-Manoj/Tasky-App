@@ -119,8 +119,8 @@ class _HomeState extends State<Home> {
     return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
-        primary: ColorConstant.white,
-        onPrimary: ColorConstant.Black,
+        foregroundColor: ColorConstant.Black,
+        backgroundColor: ColorConstant.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
           side: BorderSide(color: ColorConstant.grey),
