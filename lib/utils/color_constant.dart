@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ColorConstant {
   static Color primaryRed = Color(0xFFFF3A44);
+  static Color primaryColor = Color(0xFFFF3A44);
   static Color primaryBlue = Colors.blueAccent;
   static Color Black = Colors.black;
   static Color mainbg = const Color(0XFFD8DEF3);

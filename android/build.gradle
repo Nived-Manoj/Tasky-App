@@ -4,11 +4,12 @@ buildscript {
         google()
         mavenCentral()
     }
-
     dependencies {
+        classpath "com.android.tools.build:gradle:8.1.0" // ✅ Make sure this line exists
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
+
 
 allprojects {
     repositories {
